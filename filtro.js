@@ -1,12 +1,13 @@
 // Tenemos un li de productos
 //se define un array de objetos
 const productos = [
-  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
-  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg"},
-  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
-  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
-  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
-]
+  { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg" },
+  { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg" },
+  { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg" },
+  { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg" },
+  { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg" }
+];
+
 
 //Se cambio getElementsByName ya que devuelve una colección de elementos, y no un solo elemento.y se cambio por querySelector para seleccionar solo un solo elemento.
 
@@ -105,6 +106,11 @@ if (textoFiltro === '') {
   const productosFiltrados = filtrarProductos(productos, textoFiltro);
   mostrarProductos(productosFiltrados);
 }
+});
+
+// Evento de entrada en el campo de texto para habilitar/deshabilitar el botón
+inputFiltro.addEventListener('input', () => {
+  botonDeFiltro.disabled = inputFiltro.value.trim() === '';
 });
 /*
   const texto = $i.value;
